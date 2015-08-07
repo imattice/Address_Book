@@ -41,5 +41,11 @@
         return $app['twig'] -> render('view_all_contacts.html.twig', array('all_contacts' => Contact::getAll()));
     });
 
+    //enables Delete All Contacts page
+    $app->get('/delete_all', function() use($app) {
+        Contact::deleteAll();
+        return $app['twig']->render('delete_all.html.twig');
+    });
+
     return $app;
 ?>
