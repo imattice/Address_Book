@@ -11,7 +11,7 @@
             {% if all_contacts is not empty %}
                 <ul>
                     {# <!-- loops through each contact in the array and displays that information in the correct format --> #}
-                    {% for contacts in all_contacts %}
+                    {% for contact in all_contacts %}
                         <div>
                             <li><h4><strong>{{contact.getName}}</strong></h4></li>
                             <li>Phone: {{contact.getPhone}}</li>
@@ -23,7 +23,8 @@
                 {# <!-- If the saved contact array is empty, a message will display instead of a list of contacts --> #}
 
                 {% else %}
-                    <h3>Oops!  It looks like you have not added any contacts yet!  You can add a new contact <a href='add_contact'>here</h3>!
+                    <h3>Oops!  It looks like you have not added any contacts yet!  You can add a new contact <a href='add_contact'>here</a>!</h3>
+                {% endif %}
         <button type='button' class='button-success'><a href ='/add_contact'>Add a new contact</a></button>
         <button type='button' class='button-warning'><a href ='/delete_all'>Delete all contact</a></button>
     </body>

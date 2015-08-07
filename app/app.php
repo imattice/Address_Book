@@ -35,5 +35,11 @@
         return $app['twig'] -> render('add_confirm.html.twig', array('newcontact' => $newcontact));
     });
 
+    //enables View All Contacts page
+    //creates an array for the page to access to display all contacts using the static getAll method
+    $app->get('/view_all_contacts', function() use($app) {
+        return $app['twig'] -> render('view_all_contacts.html.twig', array('all_contacts' => Contact::getAll()));
+    });
+
     return $app;
 ?>
