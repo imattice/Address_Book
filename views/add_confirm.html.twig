@@ -2,9 +2,19 @@
     <head>
         {# <!-- Add bootstrap to html page --> #}
         <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
-        <title></title>
+        <title>Your New Contact Summary</title>
     </head>
     <body>
-
+        <div class='container'>
+        <h1>Here is your new contact!</h1>
+        <ul>
+            <div>
+                <li><h2><strong>{{newcontact.getName}}</strong></h2></li>
+                <li>Phone Number: {{newcontact.getPhoneNumber}}</li>
+                <li>Address: {{newcontact.getStreetAddress}}</li>
+                <li>Email: {{newcontact.getEmail}}</li>
+            </div>
+        <ul>
+        </div>
     </body>
 </html>
