@@ -13,7 +13,7 @@
                     {# <!-- loops through each contact in the array and displays that information in the correct format --> #}
                     {% for contact in all_contacts %}
                         <div>
-                            <li><h4><strong>{{contact.getName}}</strong></h4></li>
+                            <li><h4><strong>{{contact.getFirst}} {{contact.getLast}}</strong></h4></li>
                             <li>Phone: {{contact.getPhone}}</li>
                             <li>Address: {{contact.getAddress}}</li>
                             <li>Email: {{contact.getEmail}} </li>

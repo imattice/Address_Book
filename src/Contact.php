@@ -1,24 +1,30 @@
 <?php
 class Contact
 {
-    private $name;
+    private $name_first;
+    private $name_last;
     private $phone_number;
     private $street_address;
     private $email;
 
     //constructor, allowing program to create new contacts from input
-    function __construct ($contact_name, $contact_number, $contact_address, $contact_email)
+    function __construct ($contact_first, $contact_last, $contact_number, $contact_address, $contact_email)
     {
-        $this->name = $contact_name;
+        $this->name_first = $contact_first;
+        $this->name_last = $contact_last;
         $this->phone_number = $contact_number;
         $this->street_address = $contact_address;
         $this->email = $contact_email;
     }
 
     //setters, allowing program to limit the types of input it recieves
-    function setName($new_name)
+    function setFirst($new_first)
     {
-        $this->name = (string) $new_name;
+        $this->name_first = (string) $new_first;
+    }
+    function setLast($new_last)
+    {
+        $this->name_last = (string) $new_last;
     }
     function setPhone($new_phone)
     {
@@ -34,9 +40,13 @@ class Contact
     }
 
     //getters, allows program to retrieve private properties
-    function getName()
+    function getFirst()
     {
-        return $this->name;
+        return $this->name_first;
+    }
+    function getLast()
+    {
+        return $this->name_last;
     }
     function getPhone()
     {

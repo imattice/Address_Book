@@ -29,7 +29,7 @@
     //enables New Contact Confirmation page
     //saves contact in variable $newcontact, and posts to cookies
     $app->post('/add_confirm', function() use($app) {
-        $newcontact = new Contact($_POST['name'], $_POST['phone_number'], $_POST['street_address'], $_POST['email']);
+        $newcontact = new Contact($_POST['name_first'], $_POST['name_last'], $_POST['phone_number'], $_POST['street_address'], $_POST['email']);
         $newcontact -> save();
 
         return $app['twig'] -> render('add_confirm.html.twig', array('newcontact' => $newcontact));
