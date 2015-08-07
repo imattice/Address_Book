@@ -16,8 +16,14 @@
     $app->register (new Silex\Provider\TwigServiceProvider(), array('twig.path' => __DIR__.'/../views'
     ));
 
+    //enables homepage
     $app->get('/', function() use ($app) {
         return $app['twig'] -> render('home.html.twig');
+    });
+
+    //enables Add Contact page
+    $app->get('/add_contact', function() use($app) {
+        return $app['twig'] -> render('add_contact.html.twig');
     });
 
     return $app;
