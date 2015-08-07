@@ -1,0 +1,7 @@
+//installs microframworks that the website will use to display and run content
+{
+    "require": {
+        "silex/silex": "~1.1",
+        "twig/twig": "~1.0"
+    }
+}
