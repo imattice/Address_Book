@@ -2,9 +2,29 @@
     <head>
         {# <!-- Add bootstrap to html page --> #}
         <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
-        <title></title>
+        <title>All Contacts</title>
     </head>
     <body>
+        <div class='container'>
+        <h1>All Contacts</h1>
+            {# <!-- checks the saved array for contats. If there are contacts in the array, all contacts in the array will be displayed --> #}
+            {% if all_contacts is not empty %}
+                <ul>
+                    {# <!-- loops through each contact in the array and displays that information in the correct format --> #}
+                    {% for contacts in all_contacts %}
+                        <div>
+                            <li><h4><strong>{{contact.getName}}</strong></h4></li>
+                            <li>Phone: {{contact.getPhone}}</li>
+                            <li>Address: {{contact.getAddress}}</li>
+                            <li>Email: {{contact.getEmail}} </li>
+                        </div>
+                    {% endfor %}
+                </ul>
+                {# <!-- If the saved contact array is empty, a message will display instead of a list of contacts --> #}
 
+                {% else %}
+                    <h3>Oops!  It looks like you have not added any contacts yet!  You can add a new contact <a href='add_contact'>here</h3>!
+        <button type='button' class='button-success'><a href ='/add_contact'>Add a new contact</a></button>
+        <button type='button' class='button-warning'><a href ='/delete_all'>Delete all contact</a></button>
     </body>
 </html>
