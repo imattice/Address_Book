@@ -1,10 +1,10 @@
 <?php
 class Contact
 {
-    private $name
-    private $phone_number
-    private $street_address
-    private $email
+    private $name;
+    private $phone_number;
+    private $street_address;
+    private $email;
 
     //constructor, allowing program to create new contacts from input
     function __construct ($contact_name, $contact_number, $contact_address, $contact_email)
@@ -38,7 +38,7 @@ class Contact
     {
         return $this->name;
     }
-    fucntion getPhone()
+    function getPhone()
     {
         return $this->phone_number;
     }
@@ -48,7 +48,7 @@ class Contact
     }
     function getEmail()
     {
-        return $this->email
+        return $this->email;
     }
 
     //save function, allowing user to save contacts to cookies
@@ -60,7 +60,7 @@ class Contact
     //getAll function, which retrieves all contacts from cookies
     static function getAll()
     {
-        return $_SESSION['list_of_contacts'], $this);
+        return $_SESSION['list_of_contacts'];
     }
 
     //deleteAll function, which clears all contacts from cookies by replacing input with a blank array
